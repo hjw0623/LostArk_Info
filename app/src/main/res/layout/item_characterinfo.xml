@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <TextView
+        android:id="@+id/tv_server"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="서버"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_nickname"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="닉네임"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_class" />
+
+    <TextView
+        android:id="@+id/tv_character_level"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="캐릭터레벨"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nickname" />
+
+    <TextView
+        android:id="@+id/tv_class"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="클래스"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_server" />
+
+    <TextView
+        android:id="@+id/tv_item_avg_level"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="아이템평균레벨"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_character_level" />
+
+    <TextView
+        android:id="@+id/tv_item_max_level"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="아이템최고레벨"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_item_avg_level" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
