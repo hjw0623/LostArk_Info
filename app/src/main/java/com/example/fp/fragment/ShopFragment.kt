@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.fp.databinding.FragmentHomeBinding
+
 import com.example.fp.databinding.FragmentShopBinding
 
 class ShopFragment: Fragment() {

@@ -1,5 +1,6 @@
 package com.example.fp.retrofit
 
+import com.example.fp.response.CharacterInfo
 import com.example.fp.response.Sibling
 import com.example.fp.utils.Constants
 import retrofit2.Call
@@ -17,6 +18,13 @@ interface IRetrofit {
         @Header("accept") acceptHeader: String,
         @Header("authorization") authorizationHeader: String
     ): Call<Sibling>
+
+    @GET("/armories/characters/{characterName}")
+    fun getCharacterInfo(
+        @Path("characterName") characterName: String,
+        @Header("accept") acceptHeader: String,
+        @Header("authorization") authorizationHeader: String
+    ): Call<CharacterInfo>
 
 
 

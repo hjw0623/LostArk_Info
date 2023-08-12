@@ -8,34 +8,516 @@
     android:background="@color/black"
     tools:context="com.example.fp.fragment.CharactersFragment">
 
-    <!--    <androidx.recyclerview.widget.RecyclerView-->
-    <!--        android:id="@+id/rv_characters"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="194dp"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintHorizontal_bias="0.5"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
+
+    <EditText
+        android:id="@+id/et_character_search"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="검색"
+        android:hint="캐릭터명을 입력하세요..."
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:inputType="text"
+        android:maxLines="1"
+        app:layout_constraintEnd_toStartOf="@+id/btn_search"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView"
+    <Button
+        android:id="@+id/btn_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="검색"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/et_character_search"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ScrollView
+        android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="fdffdf"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_search"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_character_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="닉네임"
+                android:textSize="30sp"
+                android:textColor="@color/white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.3"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@drawable/rounded_gray_background"
+                            android:text="서버"
+                            android:textAlignment="center"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@drawable/rounded_gray_background"
+                            android:text="길드"
+                            android:textAlignment="center"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@drawable/rounded_gray_background"
+                            android:text="클래스"
+                            android:textAlignment="center"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@drawable/rounded_gray_background"
+                            android:text="칭호"
+                            android:textAlignment="center"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@drawable/rounded_gray_background"
+                            android:text="전투"
+                            android:textAlignment="center"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@drawable/rounded_gray_background"
+                            android:text="아이템"
+                            android:textAlignment="center"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@drawable/rounded_gray_background"
+                            android:text="원정대"
+                            android:textAlignment="center"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@drawable/rounded_gray_background"
+                            android:text="PVP"
+                            android:textAlignment="center"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@drawable/rounded_gray_background"
+                            android:text="영지"
+                            android:textAlignment="center"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.7"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_server"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="3dp"
+                            android:text="서버"
+                            android:textAlignment="center"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/tv_guild"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="3dp"
+                            android:text="길드"
+                            android:textAlignment="center"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/tv_class"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="3dp"
+                            android:text="클래스"
+                            android:textAlignment="center"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/tv_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="3dp"
+                            android:text="칭호"
+                            android:textAlignment="center"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/tv_battlelvl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="3dp"
+                            android:text="전투"
+                            android:textAlignment="center"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/tv_itemlvl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="3dp"
+                            android:text="아이템"
+                            android:textAlignment="center"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/tv_expeditionlvl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="3dp"
+                            android:text="원정대"
+                            android:textAlignment="center"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/tv_pvp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="3dp"
+                            android:text="PVP"
+                            android:textAlignment="center"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/tv_town"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="3dp"
+                            android:text="영지"
+                            android:textAlignment="center"
+                            android:textColor="@color/white" />
 
 
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/iv_character_image"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:src="@mipmap/ic_launcher" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/gray"
+                android:text="수집형포인트"
+                android:textAlignment="center"
+                android:textColor="@color/white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="9">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_mococo"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@mipmap/ic_launcher" />
+
+                    <TextView
+                        android:id="@+id/tv_mococo"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="1"
+                        android:textAlignment="center"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_island_heart"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@mipmap/ic_launcher" />
+
+                    <TextView
+                        android:id="@+id/tv_island_heart"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="1"
+                        android:textAlignment="center"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_art"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@mipmap/ic_launcher" />
+
+                    <TextView
+                        android:id="@+id/tv_art"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="1"
+                        android:textAlignment="center"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_giant_heart"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@mipmap/ic_launcher" />
+
+                    <TextView
+                        android:id="@+id/tv_giant_heart"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="1"
+                        android:textAlignment="center"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_ignesia"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@mipmap/ic_launcher" />
+
+                    <TextView
+                        android:id="@+id/tv_ignesia"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="1"
+                        android:textAlignment="center"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_sailing_adventure"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@mipmap/ic_launcher" />
+
+                    <TextView
+                        android:id="@+id/tv_sailing_adventure"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="1"
+                        android:textAlignment="center"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_tree_leaves"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@mipmap/ic_launcher" />
+
+                    <TextView
+                        android:id="@+id/tv_tree_leaves"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="1"
+                        android:textAlignment="center"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_orpheus_star"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@mipmap/ic_launcher" />
+
+                    <TextView
+                        android:id="@+id/tv_orpheus_star"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="1"
+                        android:textAlignment="center"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_memory_orgel"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@mipmap/ic_launcher" />
+
+                    <TextView
+                        android:id="@+id/tv_memory_orgel"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="1"
+                        android:textAlignment="center"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+            </LinearLayout>
+            <com.google.android.material.tabs.TabLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/gray"
+                app:tabGravity="fill"
+                app:tabTextColor="@color/white"
+                app:tabSelectedTextColor="@color/white"/>
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vp2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
